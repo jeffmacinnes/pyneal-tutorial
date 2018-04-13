@@ -17,6 +17,7 @@ fields = ['ReferringPhysicianName',
  'ContentDate',
  'StudyTime',
  'SeriesTime',
+ 'SeriesDescription',
  'AcquisitionTime',
  'ContentTime',
  'StationName',
@@ -26,9 +27,12 @@ fields = ['ReferringPhysicianName',
  'PatientID',
  'PatientBirthDate',
  'PatientSex',
+ 'PatientSize',
  'PatientAge',
  'PatientWeight',
-'ProtocolName']
+'ProtocolName',
+'InstitutionName',
+'InstitutionAddress']
 
 
 def deidDcm(inputFiles, outputDir):

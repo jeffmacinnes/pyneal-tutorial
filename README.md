@@ -32,7 +32,7 @@ GE_demo/
 The `GE_demo` folder contains two different series directories, `s1923` and `s1925`. These are nested in the session directory `p1/e123`
 
 ### s1923
-*Anatomical Image* - corresponds to functional data: **s1925**
+*Anatomical Image*
 
 * FSPGR Bravo 
 * 162 slices
@@ -50,3 +50,59 @@ The `GE_demo` folder contains two different series directories, `s1923` and `s19
 * Voxel dims: 3 x 3 x 3.8mm
 * Total Vols: 60
 
+
+## Siemens
+
+### Directory structure
+
+```
+Siemens_demo/  
+└── data  
+    ├── 001_000013_000001.dcm  
+    ├── ...
+    ├── 001_000015_000001.dcm
+    ├── ...
+    ├── 001_000017_000001.dcm  
+    └── ...
+```
+
+In a **Siemens** environment, all dicom files for all series in a given session will be exported to the same directory. That directory is named `data` here, but may appear with a different name in an actual scan setting. 
+
+Each dicom file represents a 3D volume, with all slices stored in a 2D mosaic format. File names contain both the `series number` and `volume number`, and follow the pattern:
+
+`001_<seriesNumber>_<volumeNumber>.dcm`
+
+The `Siemens_demo` directory contains dicom files for 3 different series: `000013`, `000015`, and `000017`.
+
+### 000013
+
+*Functional Data* - EPI sequence
+
+* TE: 28ms
+* TR: 1000ms
+* Flip Angle: 90
+* Slices/Vol: 18
+* Slice dims: 64 x 64 x 18
+* Voxel dims: 3 x 3 x 3.8mm
+* Total Vols: 60
+
+
+### 000015
+
+*Functional Data* - Multiband EPI sequence
+
+* TE: 37ms
+* TR: 800ms
+* Flip Angle: 52
+* Slices/Vol: 72
+* Slice dims: 104 x 104 x 72
+* Voxel dims: 2 x 2 x 2mm
+* Total Vols: 60
+
+
+### 000017
+*Anatomical Image* (Note: vitamin tablet placed on participant's left temple (left relative to the participant) in order to confirm orientation)
+
+* FSPGR Bravo 
+* Volume dims: 52 x 180 x 192
+* Voxel dims: 3 x 1.33 x 1.33mm
