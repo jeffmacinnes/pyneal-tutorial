@@ -103,6 +103,5 @@ The `Siemens_demo` directory contains dicom files for 3 different series: `00001
 ### 000017
 *Anatomical Image* (Note: vitamin tablet placed on participant's left temple (left relative to the participant) in order to confirm orientation)
 
-* FSPGR Bravo 
 * Volume dims: 52 x 180 x 192
 * Voxel dims: 3 x 1.33 x 1.33mm
