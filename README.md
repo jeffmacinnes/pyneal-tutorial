@@ -1,5 +1,6 @@
 # Pyneal tutorial data
 
+
 Example raw MRI data from 3 different scanner manufacturers, used for testing/demoing [**Pyneal**](https://github.com/jeffmacinnes/pyneal) real-time fMRI software. 
 
 * [**Download Pyneal**](https://github.com/jeffmacinnes/pyneal)
@@ -10,6 +11,10 @@ Example raw MRI data from 3 different scanner manufacturers, used for testing/de
 Within this repository you'll find example MRI data from **GE**, **Siemens**, and **Philips**  environments. The file formats and directory structures have been set up to mimic (as best as possible) how these data would appear during a real-time scan. The only exception is that the data have been de-identified by removing/altering some of the raw header fields. 
 
 See below for specific details on each set of example data
+
+* [**GE**](#ge)
+* [**Philips**](#philips)
+* [**Siemens**](#siemens)
 
 ## GE 
 
@@ -40,7 +45,7 @@ The `GE_demo` folder contains two different series directories, `s1923` and `s19
 * Voxel dims: 1 x 1 x 1mm
 
 ### s1925
-*Functional Data* - EPI sequence
+*Functional Series* - EPI sequence
 
 * TE: 28ms
 * TR: 1000ms
@@ -50,6 +55,45 @@ The `GE_demo` folder contains two different series directories, `s1923` and `s19
 * Voxel dims: 3 x 3 x 3.8mm
 * Total Vols: 60
 
+
+## Philips
+
+### Directory structure
+```
+Philips_demo/
+└── Subject001
+    ├── 0001
+    │   ├── Dump-0000.par
+    │   ├── Dump-0000.rec
+    │   ├── Dump-0001.par
+    │   ├── Dump-0001.rec
+    │  ...
+    │   ├── Dump-0185.par
+    │   └── Dump-0185.rec
+    └── MPRAGE
+        ├── Subject001_WIP_MPRAGE_SENSE_2_1.PAR
+        └── Subject001_WIP_MPRAGE_SENSE_2_1.REC
+```
+
+In a **Phillips** environment,  3D volumes are exported from the scanner and saved to a remote directory during the scan. Each volume appears as a file pair: a `par` header file, and corresponding `rec` binary file. Each new series during the session will get its own series directory, where all of the `par`/`rec` files will appear. The series directories for functional series will be named sequentially, starting with `0000`. For structural data 
+
+
+### 0001
+
+*Functional Series* - EPI sequence
+
+* TR: 1000ms
+* Flip Angle: 79
+* Slices/Vol: 15
+* Slice dims: 80 x 80 x 15
+* Voxel dims: 3 x 3 x 4mm
+* Total Vols: 186
+
+### MPRAGE
+*Anatomical Image* - EPI sequence
+
+* Volume dims: 176 x 256 x 256
+* Voxel dims: 1 x 1 x 1mm
 
 ## Siemens
 
@@ -76,7 +120,7 @@ The `Siemens_demo` directory contains dicom files for 3 different series: `00001
 
 ### 000013
 
-*Functional Data* - EPI sequence
+*Functional Series* - EPI sequence
 
 * TE: 28ms
 * TR: 1000ms
@@ -89,7 +133,7 @@ The `Siemens_demo` directory contains dicom files for 3 different series: `00001
 
 ### 000015
 
-*Functional Data* - Multiband EPI sequence
+*Functional Series* - Multiband EPI sequence
 
 * TE: 37ms
 * TR: 800ms
