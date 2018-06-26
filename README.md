@@ -70,6 +70,14 @@ Philips_demo/
     │  ...
     │   ├── Dump-0185.par
     │   └── Dump-0185.rec
+    ├── 0002
+    │   ├── Dump-0000.par
+    │   ├── Dump-0000.rec
+    │   ├── Dump-0001.par
+    │   ├── Dump-0001.rec
+    │  ...
+    │   ├── Dump-0092.par
+    │   └── Dump-0092.rec
     └── MPRAGE
         ├── Subject001_WIP_MPRAGE_SENSE_2_1.PAR
         └── Subject001_WIP_MPRAGE_SENSE_2_1.REC
@@ -88,6 +96,18 @@ In a **Phillips** environment,  3D volumes are exported from the scanner and sav
 * Slice dims: 80 x 80 x 15
 * Voxel dims: 3 x 3 x 4mm
 * Total Vols: 186
+
+### 0002
+
+*Functional Series* - EPI sequence
+
+* TR: 2000ms
+* Flip Angle: 79
+* Slices/Vol: 30  
+* Slice dims: 80 x 80 x 30
+* Voxel dims: 3 x 3 x 4mm
+* Total Vols: 93
+
 
 ### MPRAGE
 *Anatomical Image* - EPI sequence
