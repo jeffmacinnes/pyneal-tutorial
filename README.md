@@ -42,21 +42,21 @@ We will use the **Scanner Simulator** tool to simulate a new functional series, 
 * open a new terminal and navigate to the **Scanner Simulator** tool:
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal/pyneal_scanner/simulation/scannerSimulators
+	cd /Users/jeff/pyneal/pyneal_scanner/simulation/scannerSimulators
 	```
 	
 * launch `GE_sim.py`, specifying paths to the source data and output directory, and setting a TR of 1000ms:
 
 	```
-	python3 GE_sim.py /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/scanner/p1/e123/s1925 -t 1000 -o /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/scanner/p1/e123/s1926
+	python3 GE_sim.py /Users/jeff/pyneal-tutorial/GE_demo/scanner/p1/e123/s1925 -t 1000 -o /Users/jeff/pyneal-tutorial/GE_demo/scanner/p1/e123/s1926
 	```
 	
 * You should see details about the current scan, and an option to press `ENTER` to begin the scan:
 
 	```
 	-------------------------
-	Source slices: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/scanner/p1/e123/s1925
-	Output dir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/scanner/p1/e123/s1926
+	Source slices: /Users/jeff/pyneal-tutorial/GE_demo/scanner/p1/e123/s1925
+	Output dir: /Users/jeff/pyneal-tutorial/GE_demo/scanner/p1/e123/s1926
 	Total Slices Found:  1080
 	TR:  1000
 	Vols:  60
@@ -74,7 +74,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 * open a 2nd terminal window, and navigate to **Pyneal Scanner**:
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal/pyneal_scanner
+	cd /Users/jeff/pyneal/pyneal_scanner
 	```
 	
 * create (or edit the existing) `scannerConfig.yaml` file in this directory to set the `scannerMake` to `GE` and the `scannerBaseDir` to the mock scanner folder. The contents of the `scannerConfig.yaml` file should look like:
@@ -82,7 +82,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 	```
 	pynealSocketHost: 127.0.0.1
 	pynealSocketPort: '5555'
-	scannerBaseDir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/scanner
+	scannerBaseDir: /Users/jeff/pyneal-tutorial/GE_demo/scanner
 	scannerMake: GE
 	```
 	
@@ -99,11 +99,11 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 	SCANNER SETTINGS:
 	pynealSocketHost: 127.0.0.1
 	pynealSocketPort: 5555
-	scannerBaseDir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/scanner
+	scannerBaseDir: /Users/jeff/pyneal-tutorial/GE_demo/scanner
 	scannerMake: GE
 	===============
 	Session Dir:
-	/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/scanner/p1/e123
+	/Users/jeff/pyneal-tutorial/GE_demo/scanner/p1/e123
 	Series Dirs:
 	    s1925	 26.0 MB	748310 min, 8 s ago
 	    s1923	 23.5 MB	748308 min, 36 s ago
@@ -117,7 +117,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 * Open a third terminal window, and navigate to **Pyneal**. Launch **Pyneal**
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal
+	cd /Users/jeff/pyneal
 	python3 pyneal.py
 	```
 	
@@ -126,7 +126,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 	* **Mask**: In the `GE_demo` directory, there is a file named `dummyMask_64-64-18.nii.gz`. Set the mask value in **Pyneal** to use this file. This mask was pre-made to match the volume dimensions of the `GE_demo` scan data. This mask is simply a rectangle positioned in the middle slice of the 3D volume, and is for demonstration purposes only. 
 	* **Preprocessing**: Set `# of timepts` to: `60`
 	* **Analysis**: Select the `Average` option
-	* **Output**: Set the output directory to `/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/output`. Check `Launch Dashboard?`. 
+	* **Output**: Set the output directory to `/Users/jeff/pyneal-tutorial/GE_demo/output`. Check `Launch Dashboard?`. 
 
 * Start **Pyneal** by pressing `Submit`. 
 	* In the **Pyneal Scanner** terminal, you will see messages indicating that **Pyneal Scanner** has succesfully set up a connection to **Pyneal** and that it is waiting for a new `seriesDir` (which will be created once the scan starts. 
@@ -138,7 +138,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 
 * As the scan is progressing, each of the three terminal windows will update with new log messages. In addition, you can monitor the progress from dashboard in your browser at `127.0.0.1:5558`. 
 
-* As soon at the scan finishes, you can find the **Pyneal** output at `/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/GE_demo/output/pyneal_001`. This directory will have:
+* As soon at the scan finishes, you can find the **Pyneal** output at `/Users/jeff/pyneal-tutorial/GE_demo/output/pyneal_001`. This directory will have:
 	* *pynealLog.log*: log file from the current scan
 	* *receivedFunc.nii.gz*: 4D nifi file of the data, as received by **Pyneal**	* *results.json*: JSON file containing the analysis results from the current scan. 	
 	
@@ -153,21 +153,21 @@ We will use the **Scanner Simulator** tool to simulate a new functional series, 
 * open a new terminal and navigate to the **Scanner Simulator** tool:
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal/pyneal_scanner/simulation/scannerSimulators
+	cd /Users/jeff/pyneal/pyneal_scanner/simulation/scannerSimulators
 	```
 	
 * launch `Philips_sim.py`, specifying paths to the source data and output directory, and setting a TR of 2000ms:
 
 	```
-	python3 Philips_sim.py /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/scanner/Subject001/0002 -t 2000 -o /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/scanner/Subject001/0003
+	python3 Philips_sim.py /Users/jeff/pyneal-tutorial/Philips_demo/scanner/Subject001/0002 -t 2000 -o /Users/jeff/pyneal-tutorial/Philips_demo/scanner/Subject001/0003
 	```
 	
 * You should see details about the current scan, and an option to press `ENTER` to begin the scan:
 
 	```
 	-------------------------
-	Source slices: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/scanner/Subject001/0002
-	Output dir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/scanner/Subject001/0003
+	Source slices: /Users/jeff/pyneal-tutorial/Philips_demo/scanner/Subject001/0002
+	Output dir: /Users/jeff/pyneal-tutorial/Philips_demo/scanner/Subject001/0003
 	Total Volumes:  93
 	Image Dims:  (80, 80, 30)
 	TR:  2000
@@ -183,7 +183,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 * open a 2nd terminal window, and navigate to **Pyneal Scanner**:
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal/pyneal_scanner
+	cd /Users/jeff/pyneal/pyneal_scanner
 	```
 	
 * create (or edit the existing) `scannerConfig.yaml` file in this directory to set the `scannerMake` to `Philips` and the `scannerBaseDir` to the mock scanner folder. The contents of the `scannerConfig.yaml` file should look like:
@@ -191,7 +191,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 	```
 	pynealSocketHost: 127.0.0.1
 	pynealSocketPort: '5555'
-	scannerBaseDir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/scanner/Subject001
+	scannerBaseDir: /Users/jeff/pyneal-tutorial/Philips_demo/scanner/Subject001
 	scannerMake: Philips
 	```
 	
@@ -208,11 +208,11 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 	SCANNER SETTINGS:
 	pynealSocketHost: 127.0.0.1
 	pynealSocketPort: 5555
-	scannerBaseDir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/scanner/Subject001
+	scannerBaseDir: /Users/jeff/pyneal-tutorial/Philips_demo/scanner/Subject001
 	scannerMake: Philips
 	===============
 	Session Dir:
-	/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/scanner/Subject001
+	/Users/jeff/pyneal-tutorial/Philips_demo/scanner/Subject001
 	Series Dirs:
 	    0002	 73.4 MB	748534 min, 58 s ago
 	    0001	 74.0 MB	748522 min, 55 s ago
@@ -227,7 +227,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 * Open a third terminal window, and navigate to **Pyneal**. Launch **Pyneal**
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal
+	cd /Users/jeff/pyneal
 	python3 pyneal.py
 	```
 	
@@ -236,7 +236,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 	* **Mask**: In the `Philips_demo` directory, there is a file named `dummyMask_80-80-30.nii.gz`. Set the mask value in **Pyneal** to use this file. This mask was pre-made to match the volume dimensions of the `Philips_demo` scan data. This mask is simply a rectangle positioned in the middle slice of the 3D volume, and is for demonstration purposes only. 
 	* **Preprocessing**: Set `# of timepts` to: `93`
 	* **Analysis**: Select the `Average` option
-	* **Output**: Set the output directory to `/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/output`. Check `Launch Dashboard?`. 
+	* **Output**: Set the output directory to `/Users/jeff/pyneal-tutorial/Philips_demo/output`. Check `Launch Dashboard?`. 
 
 * Start **Pyneal** by pressing `Submit`. 
 	* In the **Pyneal Scanner** terminal, you will see messages indicating that **Pyneal Scanner** has succesfully set up a connection to **Pyneal** and that it is waiting for a new `seriesDir` (which will be created once the scan starts. 
@@ -248,7 +248,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the exam directory fo
 
 * As the scan is progressing, each of the three terminal windows will update with new log messages. In addition, you can monitor the progress from dashboard in your browser at `127.0.0.1:5558`. 
 
-* As soon at the scan finishes, you can find the **Pyneal** output at `/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Philips_demo/output/pyneal_001`. This directory will have:
+* As soon at the scan finishes, you can find the **Pyneal** output at `/Users/jeff/pyneal-tutorial/Philips_demo/output/pyneal_001`. This directory will have:
 	* *pynealLog.log*: log file from the current scan
 	* *receivedFunc.nii.gz*: 4D nifi file of the data, as received by **Pyneal**	* *results.json*: JSON file containing the analysis results from the current scan. 
 
@@ -264,20 +264,20 @@ We will use the **Scanner Simulator** tool to simulate a new functional series, 
 * open a new terminal and navigate to the **Scanner Simulator** tool:
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal/pyneal_scanner/simulation/scannerSimulators
+	cd /Users/jeff/pyneal/pyneal_scanner/simulation/scannerSimulators
 	```
 	
 * launch `Siemens_sim.py`, specifying paths to the source directory, series numbers, output directory, and setting a TR of 1000ms:
 
 	```
-	python3 Siemens_sim.py /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Siemens_demo/scanner/data 000013 -t 1000 -n 000014
+	python3 Siemens_sim.py /Users/jeff/pyneal-tutorial/Siemens_demo/scanner/data 000013 -t 1000 -n 000014
 	```
 	
 * You should see details about the current scan, and an option to press `ENTER` to begin the scan:
 
 	```
 	-------------------------
-	Source dir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Siemens_demo/scanner/data
+	Source dir: /Users/jeff/pyneal-tutorial/Siemens_demo/scanner/data
 	Total Mosaics Found: 60
 	TR: 1000
 	Press ENTER to begin the "scan"
@@ -292,7 +292,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the session directory
 * open a 2nd terminal window, and navigate to **Pyneal Scanner**:
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal/pyneal_scanner
+	cd /Users/jeff/pyneal/pyneal_scanner
 	```
 	
 * create (or edit the existing) `scannerConfig.yaml` file in this directory to set the `scannerMake` to `Siemens` and the `scannerBaseDir` to the mock scanner folder. The contents of the `scannerConfig.yaml` file should look like:
@@ -300,7 +300,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the session directory
 	```
 	pynealSocketHost: 127.0.0.1
 	pynealSocketPort: '5555'
-	scannerBaseDir: /Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Siemens_demo/scanner/data
+	scannerBaseDir: /Users/jeff/pyneal-tutorial/Siemens_demo/scanner/data
 	scannerMake: Siemens
 	```
 	
@@ -315,7 +315,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the session directory
 	```
 	===============
 	Session Dir:
-	/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Siemens_demo/scanner/data
+	/Users/jeff/pyneal-tutorial/Siemens_demo/scanner/data
 	Unique Series:
 	    000013	60 files 	1113170 min, 51 s ago
 	    000015	60 files 	1113170 min, 51 s ago
@@ -330,7 +330,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the session directory
 * Open a third terminal window, and navigate to **Pyneal**. Launch **Pyneal**
 
 	```
-	cd /Users/jeff/gDrive/jeffCloud/real-time/pyneal
+	cd /Users/jeff/pyneal
 	python3 pyneal.py
 	```
 	
@@ -339,7 +339,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the session directory
 	* **Mask**: In the `Siemens_demo` directory, there is a file named `dummyMask_64-64-18.nii.gz`. Set the mask value in **Pyneal** to use this file. This mask was pre-made to match the volume dimensions of the `Siemens_demo` scan data. This mask is simply a rectangle positioned in the middle slice of the 3D volume, and is for demonstration purposes only. 
 	* **Preprocessing**: Set `# of timepts` to: `60`
 	* **Analysis**: Select the `Average` option
-	* **Output**: Set the output directory to `/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Siemens_demo/output`. Check `Launch Dashboard?`. 
+	* **Output**: Set the output directory to `/Users/jeff/pyneal-tutorial/Siemens_demo/output`. Check `Launch Dashboard?`. 
 
 * Start **Pyneal** by pressing `Submit`. 
 	* In the **Pyneal Scanner** terminal, you will see messages indicating that **Pyneal Scanner** has succesfully set up a connection to **Pyneal** and that it is waiting for a new `seriesDir` (which will be created once the scan starts. 
@@ -351,7 +351,7 @@ Configure **Pyneal Scanner** to watch for new scan data in the session directory
 
 * As the scan is progressing, each of the three terminal windows will update with new log messages. In addition, you can monitor the progress from dashboard in your browser at `127.0.0.1:5558`. 
 
-* As soon at the scan finishes, you can find the **Pyneal** output at `/Users/jeff/gDrive/jeffCloud/real-time/pyneal-tutorial/Siemens_demo/output/pyneal_001`. This directory will have:
+* As soon at the scan finishes, you can find the **Pyneal** output at `/Users/jeff/pyneal-tutorial/Siemens_demo/output/pyneal_001`. This directory will have:
 	* *pynealLog.log*: log file from the current scan
 	* *receivedFunc.nii.gz*: 4D nifi file of the data, as received by **Pyneal**	* *results.json*: JSON file containing the analysis results from the current scan. 
 
